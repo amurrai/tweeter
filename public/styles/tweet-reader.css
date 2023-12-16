@@ -9,6 +9,10 @@
   border: 5px solid #3f3f3f;
 }
 
+.tweet:hover {
+  box-shadow: 5px 5px #717171;
+}
+
 article.tweet header {
   font-size: 16px;
   display: flex;
@@ -32,4 +36,8 @@ article.tweet header {
   padding-top:10px;
   color: #4056A1;
   border-top: 5px solid #3f3f3f;
+}
+
+.tweet i:hover {
+  color: gold;
 }
