@@ -19,7 +19,7 @@ button {
   font-family: 'Bungee', sans-serif;
 }
 
-form>div {
+form div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
