@@ -19,7 +19,7 @@ $(document).ready(() => {
           </header>
           <p> ${data.content.text} </p>
           <footer>
-            ${data.created_at}
+            ${timeago.format(data.created_at)}
             <div>
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>
