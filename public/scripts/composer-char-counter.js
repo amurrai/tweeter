@@ -8,6 +8,9 @@ $(document).ready(function() {
     if (len > 140) {
       $charNum.css('color', '#c40000')
     }
+    if (len <= 140) {
+      $charNum.css('color', '#545149')
+    }
   }).trigger('input');
   
 });
