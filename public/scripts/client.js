@@ -46,9 +46,18 @@ $(document).ready(() => {
 
   loadTweets();
 
-  const $button = $('#create-new-tweet');
-  $button.on('submit', function () {
+  const $newTweet = $('#create-new-tweet');
+  $newTweet.on('submit', function (event) {
     event.preventDefault();
+    const tweetText = $("#tweet-text").val()
+    if (tweetText === "") {
+      alert("The tweet cannot be blank")
+      return;
+    }
+    if (tweetText.length > 140) {
+      alert("The tweet cannot be over 140 characters")
+      return;
+    }
     $.post($(this).serialize(), { method: 'POST'});
   })
 });
