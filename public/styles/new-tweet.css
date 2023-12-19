@@ -1,4 +1,5 @@
 .new-tweet {
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

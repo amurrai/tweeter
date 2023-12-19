@@ -47,7 +47,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet" >
-        <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -58,27 +57,7 @@
         </form>
       </section>
       <br>
-      <section class="tweet-reader"> 
-        <article class="tweet">
-          <header>
-            <div class="tweet-avatar">
-              <img src="https://i.imgur.com/73hZDYK.png"> 
-              <h3>Newton</h3>
-            </div>
-            <div>
-              <h3>@SirIsaac</h3>
-            </div>
-          </header>
-          <p> Tweet text here </p>
-          <footer>
-            Timestamp
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+      <section id="tweets-container"> 
       </section>    
     </main>
   </body>

@@ -1,4 +1,7 @@
-.tweet-reader {
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   width: 100%;
 }
 
@@ -39,5 +42,5 @@ article.tweet header {
 }
 
 .tweet i:hover {
-  color: gold;
+  color: goldenrod;
 }
