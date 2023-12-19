@@ -63,4 +63,10 @@ $(document).ready(() => {
   }
 
   renderTweets(data);
+
+  const $button = $('#create-new-tweet');
+  $button.on('submit', function () {
+    event.preventDefault();
+    $.post($(this).serialize(), { method: 'POST'});
+  })
 });
