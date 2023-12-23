@@ -11,5 +11,11 @@ $(document).ready(function() {
     if (len <= 140) {
       $charNum.css('color', '#545149')
     }
-  }).trigger('input');
+  }).trigger('change');
+
+  // reset counter on submit
+  // $("#create-new-tweet").on('submit', function () {
+  //   // len = $("textarea").value.length;
+  //   $charNum.text(140);
+  // });
 });

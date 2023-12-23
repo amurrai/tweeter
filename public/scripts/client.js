@@ -56,7 +56,8 @@ $(document).ready(() => {
   $(".new-tweet").hide();
 
   $("#compose").on('click', function() {
-      $(".new-tweet").slideToggle();
+      $(".new-tweet").slideDown();
+      $("#tweet-text").focus();
   });
 
   const $newTweet = $('#create-new-tweet');
@@ -81,4 +82,20 @@ $(document).ready(() => {
       loadTweets();
     });    
   })
+
+  const $scrollToTop = $(".scroll-to-top");
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 300) {
+        $scrollToTop.addClass('show');
+    } else {
+      $scrollToTop.removeClass('show');
+    }
+  });
+  $scrollToTop.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: 0
+    }, '300');
+    $("#compose").trigger("click");
+  });
 });
