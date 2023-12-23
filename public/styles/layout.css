@@ -32,5 +32,13 @@ body {
   width: 90%;
   background-color: #f4f1ec;
   margin: auto;
+ }
 
+ @media only screen and (min-width: 1024px) {
+  main {
+    width: 60%;
+    float: right;
+    margin-top: 180px;
+    margin-right: 2em;
+  }
  }
