@@ -43,7 +43,7 @@ app.post("/tweets", (req, res) => {
       "text": text
     },
     "created_at": Date.now()
-  }
+  };
   db.push(newTweet);
   res.status(201).send();
 });

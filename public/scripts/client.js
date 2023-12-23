@@ -4,8 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery"s document ready function
  */
 
-//escape function to prevent script text input 
-const escape = function (str) {
+//escape function to prevent script text input
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -49,9 +49,9 @@ $(document).ready(() => {
   
   const loadTweets = function() {
     $.ajax("http://localhost:8080/tweets", { method: "GET" })
-    .then(function (data) {
-      renderTweets(data);
-    });
+      .then(function (data) {
+        renderTweets(data);
+      });
   };
 
   // function call for loading the tweets for the first time
@@ -61,20 +61,20 @@ $(document).ready(() => {
   $(".new-tweet").hide();
 
   $("#compose").on("click", function() {
-      $(".new-tweet").slideDown();
-      $("#tweet-text").focus();
+    $(".new-tweet").slideDown();
+    $("#tweet-text").focus();
   });
 
   const $newTweet = $("#create-new-tweet");
   $("#tweet-blank").hide();
-  $("#tweet-140").hide();  
+  $("#tweet-140").hide();
   
   // validation for new tweet text input
-  $newTweet.on("submit", function (event) {
+  $newTweet.on("submit", function(event) {
     event.preventDefault();
     $("#tweet-blank").hide();
-    $("#tweet-140").hide();  
-    const tweetText = $("#tweet-text").val()
+    $("#tweet-140").hide();
+    const tweetText = $("#tweet-text").val();
     if (tweetText === "") {
       $("#tweet-blank").slideDown();
       return;
@@ -83,17 +83,17 @@ $(document).ready(() => {
       $("#tweet-140").slideDown();
       return;
     }
-    $.post("/tweets", $(this).serialize(), function() { 
+    $.post("/tweets", $(this).serialize(), function() {
       $newTweet[0].reset();
       loadTweets();
-    });    
-  })
+    });
+  });
 
   // scroll to top button appears after scrolling and triggers new tweet click
   const $scrollToTop = $(".scroll-to-top");
   $(window).on("scroll", function() {
     if ($(window).scrollTop() > 300) {
-        $scrollToTop.addClass("show");
+      $scrollToTop.addClass("show");
     } else {
       $scrollToTop.removeClass("show");
     }
@@ -101,7 +101,7 @@ $(document).ready(() => {
   $scrollToTop.on("click", function(e) {
     e.preventDefault();
     $("html, body").animate({
-        scrollTop: 0
+      scrollTop: 0
     }, "300");
     $("#compose").trigger("click");
   });
