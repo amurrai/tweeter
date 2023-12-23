@@ -22,3 +22,7 @@ nav span {
 nav i {
   color: #c40000;
 }
+
+#compose {
+  cursor: pointer;
+}
