@@ -35,3 +35,15 @@ app.use("/tweets", tweetsRoutes);
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
+
+app.post("/tweets", (req, res) => {
+  const text = req.body.text;
+  const newTweet = {
+    "content": {
+      "text": text
+    },
+    "created_at": Date.now()
+  }
+  db.push(newTweet);
+  res.status(201).send();
+});

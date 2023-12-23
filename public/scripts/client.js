@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(() => {
   const createTweetElement = function(data) {
     const $tweet = `
@@ -17,7 +23,7 @@ $(document).ready(() => {
               <h3>${data.user.handle}</h3>
             </div>
           </header>
-          <p> ${data.content.text} </p>
+          <p> ${escape(data.content.text)} </p>
           <footer>
             ${timeago.format(data.created_at)}
             <div>
@@ -32,8 +38,9 @@ $(document).ready(() => {
   };
 
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (let tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
@@ -47,6 +54,7 @@ $(document).ready(() => {
   loadTweets();
 
   const $newTweet = $('#create-new-tweet');
+
   $newTweet.on('submit', function (event) {
     event.preventDefault();
     const tweetText = $("#tweet-text").val()
@@ -58,6 +66,9 @@ $(document).ready(() => {
       alert("The tweet cannot be over 140 characters")
       return;
     }
-    $.post($(this).serialize(), { method: 'POST'});
+    $.post("/tweets", $(this).serialize(), function() { 
+      $newTweet[0].reset();
+      loadTweets();
+    });    
   })
 });

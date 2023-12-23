@@ -1,9 +1,9 @@
 $(document).ready(function() {
   console.log("JS started");
   const $charNum = $('#charNum');
-  
+  let len = 0;
   $( "textarea" ).on("input", function() {
-    let len = this.value.length;
+    len = this.value.length;
     $charNum.text(140 - len);
     if (len > 140) {
       $charNum.css('color', '#c40000')
@@ -12,5 +12,7 @@ $(document).ready(function() {
       $charNum.css('color', '#545149')
     }
   }).trigger('input');
-  
+  $('#create-new-tweet').on('submit', function() {
+    $charNum.text(140);
+  });
 });
