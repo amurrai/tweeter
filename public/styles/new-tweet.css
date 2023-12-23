@@ -18,6 +18,7 @@ button {
   background-color: #4056A1;
   color: white;
   font-family: 'Bungee', sans-serif;
+  cursor: pointer;
 }
 
 form div {
@@ -32,6 +33,7 @@ form div {
   color: #c40000;
   text-align: center;
   margin: auto;
+  margin-bottom: 1em;
   border: 3px solid #c40000;
 }
 
@@ -39,5 +41,6 @@ form div {
   color: #c40000;
   text-align: center;
   margin: auto;
+  margin-bottom: 1em;
   border: 3px solid #c40000;
 }
