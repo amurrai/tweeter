@@ -12,7 +12,4 @@ $(document).ready(function() {
       $charNum.css('color', '#545149')
     }
   }).trigger('input');
-  $('#create-new-tweet').on('submit', function() {
-    $charNum.text(140);
-  });
 });

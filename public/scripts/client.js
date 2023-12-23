@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//escape function to prevent script text input 
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -54,16 +55,20 @@ $(document).ready(() => {
   loadTweets();
 
   const $newTweet = $('#create-new-tweet');
-
+  $("#tweet-blank").hide();
+  $("#tweet-140").hide();  
+  
   $newTweet.on('submit', function (event) {
     event.preventDefault();
+    $("#tweet-blank").hide();
+    $("#tweet-140").hide();  
     const tweetText = $("#tweet-text").val()
     if (tweetText === "") {
-      alert("The tweet cannot be blank")
+      $("#tweet-blank").slideDown();
       return;
     }
     if (tweetText.length > 140) {
-      alert("The tweet cannot be over 140 characters")
+      $("#tweet-140").slideDown();
       return;
     }
     $.post("/tweets", $(this).serialize(), function() { 

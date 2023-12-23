@@ -49,8 +49,10 @@
     <main class="container">
       <section class="new-tweet" >
         <form action="/tweets" method="POST" id="create-new-tweet">
+          <h5 id="tweet-blank">The tweet cannot be blank</h5>
+          <h5 id="tweet-140">The tweet cannot be over 140 characters</h5>
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text"></textarea>          
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text" id="charNum"></output>

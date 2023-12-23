@@ -27,3 +27,17 @@ form div {
   height: 40px;
   font-family: 'Bungee', sans-serif;
 }
+
+#tweet-blank {
+  color: #c40000;
+  text-align: center;
+  margin: auto;
+  border: 3px solid #c40000;
+}
+
+#tweet-140 {
+  color: #c40000;
+  text-align: center;
+  margin: auto;
+  border: 3px solid #c40000;
+}
