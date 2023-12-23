@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("JS started");
   const $charNum = $('#charNum');
   let len = 0;
   $( "textarea" ).on("input", function() {
@@ -14,8 +13,8 @@ $(document).ready(function() {
   }).trigger('change');
 
   // reset counter on submit
-  // $("#create-new-tweet").on('submit', function () {
-  //   // len = $("textarea").value.length;
-  //   $charNum.text(140);
-  // });
+  $("#create-new-tweet").on('submit', function () {
+    len = $("textarea").value.length;
+    $(".counter").text(140);
+  });
 });
