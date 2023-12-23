@@ -10,7 +10,7 @@ Main features
 
 ## Final Product
 
-!["Mobile format main page"](https://github.com/amurrai/tinyapp/blob/master/docs/mobile-page.png)
+!["Mobile format main page"](https://github.com/amurrai/tweeter/blob/master/docs/mobile-page.png)
 
 ## Getting Started
 
