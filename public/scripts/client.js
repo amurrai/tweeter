@@ -48,7 +48,7 @@ $(document).ready(() => {
   };
   
   const loadTweets = function() {
-    $.ajax("http://localhost:8080/tweets", { method: "GET" })
+    $.ajax("/tweets", { method: "GET" })
       .then(function (data) {
         renderTweets(data);
       });
@@ -84,8 +84,9 @@ $(document).ready(() => {
       return;
     }
     $.post("/tweets", $(this).serialize(), function() {
-      $newTweet[0].reset();
+      $newTweet[0].reset();      
       loadTweets();
+      $("#char-num").text(140);
     });
   });
 
