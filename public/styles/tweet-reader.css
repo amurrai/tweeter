@@ -44,3 +44,7 @@ article.tweet header {
 .tweet i:hover {
   color: goldenrod;
 }
+
+.tweet p {
+  word-wrap:break-word;
+}
