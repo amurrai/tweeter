@@ -74,7 +74,7 @@ $(document).ready(() => {
     event.preventDefault();
     $("#tweet-blank").hide();
     $("#tweet-140").hide();
-    const tweetText = $("#tweet-text").val();
+    const tweetText = $("#tweet-text").val().trim();
     if (tweetText === "") {
       $("#tweet-blank").slideDown();
       return;
